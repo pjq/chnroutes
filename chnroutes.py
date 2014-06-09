@@ -81,6 +81,8 @@ def generate_mac(metric):
     route add 10.0.0.0/8 "${OLDGW}"
     route add 172.16.0.0/12 "${OLDGW}"
     route add 192.168.0.0/16 "${OLDGW}"
+    route add 10.128.42.0/16 "${OLDGW}"
+    route add 10.17.7.0/16 "${OLDGW}"
     """)
     
     downscript_header=textwrap.dedent("""\
@@ -96,6 +98,8 @@ def generate_mac(metric):
     route delete 10.0.0.0/8 "${OLDGW}"
     route delete 172.16.0.0/12 "${OLDGW}"
     route delete 192.168.0.0/16 "${OLDGW}"
+    route delete 10.128.42.0/16 "${OLDGW}"
+    route delete 10.17.7.0/16 "${OLDGW}"
     """)
     
     upfile=open('ip-up','w')
